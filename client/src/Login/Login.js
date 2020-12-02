@@ -18,8 +18,6 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
-        console.log(password);
         fetch("http://localhost:9000/v2/posts", {
             method: "POST",
             headers: {
@@ -38,7 +36,6 @@ const Login = () => {
                     history.push('/success');
                 }
                 if (res.status === 401) {
-                    console.log("bad auth");
                     setBadAuth(true);
                 }
             })
@@ -53,11 +50,11 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <label>Email
                     <br />
-                    <input type="text" placeholder="email" value={email} onChange={handleEmail} />
+                    <input name="email" type="text" placeholder="email" value={email} onChange={handleEmail} />
                 </label>
                 <label>Password
                     <br />
-                    <input type="password" placeholder="password" value={password} onChange={handlePassword} />
+                    <input name="password" type="password" placeholder="password" value={password} onChange={handlePassword} />
                 </label>
                 <input type="submit" value="Login" />
             </form>

@@ -1,7 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import Data from './data.js';
 import Auth from './dbModel.js';
 
 const connection_url = 'mongodb+srv://admin:S25HYXDwmFDOPLG7@cluster0.dqfbp.mongodb.net/aosTest?retryWrites=true&w=majority';
@@ -28,10 +27,6 @@ mongoose.connect(connection_url, {
 // api endpoints
 app.get('/', (req, res) =>
     res.status(200).send('Hello world')
-);
-
-app.get('/v1/posts', (req, res) => 
-    res.status(200).send(Data)
 );
 
 app.post('/v2/posts', (req, res) => {
