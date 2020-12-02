@@ -1,7 +1,7 @@
-import express from 'express'
-import mongoose from 'mongoose'
+const express = require('express')
+const mongoose = require('mongoose')
 
-import Auth from './dbModel.js';
+const Auth = require('./dbModel.js');
 
 const connection_url = 'mongodb+srv://admin:S25HYXDwmFDOPLG7@cluster0.dqfbp.mongodb.net/aosTest?retryWrites=true&w=majority';
 

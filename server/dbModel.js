@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose');
 
 const aosSchema = mongoose.Schema({
     email: String,
     password: String
 });
 
-export default mongoose.model('aosAuth', aosSchema)
+module.exports =  mongoose.model('aosAuth', aosSchema)
